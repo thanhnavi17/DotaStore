@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Khai báo kiểu cho file tiles -->
+<!DOCTYPE tiles-definitions PUBLIC
+        "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+        "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+	<!-- Khai báo template home -->
+	<definition name="baseLayoutHome"
+		template="/WEB-INF/home/layout.jsp">
+		<put-attribute name="title" value="Template" />
+		<put-attribute name="header"
+			value="/WEB-INF/home/header.jsp" />
+		
+		<put-attribute name="body"
+			value="/WEB-INF/home/body.jsp" />
+		<put-attribute name="footer"
+			value="/WEB-INF/home/footer.jsp" />
+	</definition>
+	<!-- Khai báo template admin -->
+	<definition name="baseLayoutAdmin"
+		template="/WEB-INF/admin/layout.jsp">
+		<put-attribute name="title" value="Template" />
+		<put-attribute name="header"
+			value="/WEB-INF/admin/header.jsp" />
+		<put-attribute name="menu"
+			value="/WEB-INF/admin/menu.jsp" />
+		<put-attribute name="body"
+			value="/WEB-INF/admin/body.jsp" />
+		<put-attribute name="footer"
+			value="/WEB-INF/admin/footer.jsp" />
+	</definition>
+	
+	<definition name="danhSachSanPham" extends="baseLayoutAdmin">
+		<put-attribute name="title"
+			value="Quản trị Sản phẩm - DotaStore" />
+		<put-attribute name="body"
+			value="/admin/DanhSachSanPham.jsp" />	
+	</definition>
+	<definition name="danhSachNguoiDung" extends="baseLayoutAdmin">
+		<put-attribute name="title"
+			value="Quản trị người dùng - DotaStore" />
+		<put-attribute name="body"
+			value="/admin/DanhSachNguoiDung.jsp" />	
+	</definition>
+	<definition name="capNhatThemMoi" extends="baseLayoutAdmin">
+		<put-attribute name="title"
+			value="Cập nhật sản phẩm - DotaStore" />
+		<put-attribute name="body"
+			value="/admin/SuaThongTin.jsp" />	
+	</definition>
+	<definition name="phanQuyen" extends="baseLayoutAdmin">
+		<put-attribute name="title"
+			value="Cập nhật sản phẩm - DotaStore" />
+		<put-attribute name="body"
+			value="/admin/PhanQuyen.jsp" />	
+	</definition>
+	<definition name="nhatKy" extends="baseLayoutAdmin">
+		<put-attribute name="title"
+			value="Nhật ký - DotaStore" />
+		<put-attribute name="body"
+			value="/admin/NhatKy.jsp" />	
+	</definition>
+	<definition name="capNhatNguoiDung" extends="baseLayoutAdmin">
+		<put-attribute name="title"
+			value="Thông tin người dùng - DotaStore" />
+		<put-attribute name="body"
+			value="/admin/ThongTinTaiKhoan.jsp" />	
+	</definition>
+	<definition name="themBaiViet" extends="baseLayoutAdmin">
+		<put-attribute name="title"
+			value="Thêm mới bài viết - DotaStore" />
+		<put-attribute name="body"
+			value="/admin/ThemMoiBaiViet.jsp" />	
+	</definition>
+	<definition name="dsHoaDon" extends="baseLayoutAdmin">
+		<put-attribute name="title"
+			value="Thêm mới bài viết - DotaStore" />
+		<put-attribute name="body"
+			value="/admin/HoaDonBan.jsp" />	
+	</definition>
+	
+	<!-- Template Trang Giao Diện người dùng -->
+	<definition name="trangChu" extends="baseLayoutHome">
+		<put-attribute name="title"
+			value="Trang chủ - DotaStore" />
+		<put-attribute name="body" value="/WEB-INF/TrangChu.jsp" />
+	</definition>
+	<definition name="chiTietSP" extends="baseLayoutHome">
+		<put-attribute name="title"
+			value="Trang chủ - DotaStore" />
+		<put-attribute name="body" value="/WEB-INF/ChiTietSP.jsp" />
+	</definition>
+	<definition name="thongTinCaNhan" extends="baseLayoutHome">
+		<put-attribute name="title"
+			value="Thông tin cá nhân" />
+		<put-attribute name="body" value="/WEB-INF/ThongTinCaNhan.jsp" />
+	</definition>
+	<definition name="cart" extends="baseLayoutHome">
+		<put-attribute name="title"
+			value="Giỏ hàng" />
+		<put-attribute name="body" value="/WEB-INF/GioHang.jsp" />
+	</definition>
+	<definition name="contact" extends="baseLayoutHome">
+		<put-attribute name="title"
+			value="Liên hệ" />
+		<put-attribute name="body" value="/WEB-INF/LienHe.jsp" />
+	</definition>
+	<definition name="huongDan" extends="baseLayoutHome">
+		<put-attribute name="title"
+			value="Liên hệ" />
+		<put-attribute name="body" value="/WEB-INF/HuongDanMuaHang.jsp" />
+	</definition>
+	<definition name="tinTuc" extends="baseLayoutHome">
+		<put-attribute name="title"
+			value="Liên hệ" />
+		<put-attribute name="body" value="/WEB-INF/TinTuc.jsp" />
+	</definition>
+	<definition name="hoaDon" extends="baseLayoutHome">
+		<put-attribute name="title"
+			value="Liên hệ" />
+		<put-attribute name="body" value="/WEB-INF/HoaDon.jsp" />
+	</definition>
+	<definition name="hoaDonChiTiet" extends="baseLayoutHome">
+		<put-attribute name="title"
+			value="Liên hệ" />
+		<put-attribute name="body" value="/WEB-INF/HoaDonChiTiet.jsp" />
+	</definition>
+	<definition name="doiMatKhauTrangChu" extends="baseLayoutHome">
+		<put-attribute name="title"
+			value="Liên hệ" />
+		<put-attribute name="body" value="/WEB-INF/DoiMatKhau.jsp" />
+	</definition>
+</tiles-definitions>

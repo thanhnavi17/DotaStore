@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+	"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+		<property name="hibernate.dialect">org.hibernate.dialect.SQLServerDialect</property>
+		<property name="hibernate.show_sql">true</property>
+		<property name="hibernate.current_session_context_class">thread</property>
+		<property name="hibernate.connection.driver_class">com.microsoft.sqlserver.jdbc.SQLServerDriver</property>
+		<property name="hibernate.connection.url">jdbc:sqlserver://localhost:1433;databaseName=QuanLyShopGame</property>
+		<!-- &amp;useUnicode=true&amp;characterEncoding=utf-8 -->
+		<property name="hibernate.connection.username">sa</property>
+		<property name="hibernate.connection.password">thanhmac1701</property>
+		<property name="hibernate.connection.CharSet">UTF-8</property>
+		<property name="hibernate.connection.characterEncoding">UTF-8</property>
+		<property name="hibernate.connection.useUnicode">true</property>
+		<property name="hibernate.enable_lazy_load_no_trans">true</property>
+		<!-- Khai báo các tập tin ánh xạ -->
+		<mapping class="vn.com.stanford.entity.SanPham"/>
+		<mapping class="vn.com.stanford.entity.LoaiSP"/>
+		<mapping class="vn.com.stanford.entity.NguoiDung"/>
+		<mapping class="vn.com.stanford.entity.VaiTro"/>
+		<mapping class="vn.com.stanford.entity.PhanQuyen"/>
+		<mapping class="vn.com.stanford.entity.ChucNang"/>
+		<mapping class="vn.com.stanford.entity.NhatKy"/>
+		<mapping class="vn.com.stanford.entity.Hero"/>
+		<mapping class="vn.com.stanford.entity.HoaDonBan"/>
+		<mapping class="vn.com.stanford.entity.HoaDonBanChiTiet"/>
+	</session-factory>
+</hibernate-configuration>

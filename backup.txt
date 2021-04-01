@@ -1,0 +1,43 @@
+List<PkmForm> lstPkm = formDao.dangBinhThuong("normal");
+		for(int i = 0;i<lstPkm.size();i++) {
+			//Gán tên hệ vào list
+			PkmType objType1 = new PkmType();			
+			objType1 = typeDao.layChiTiet(lstPkm.get(i).getType1());			
+			lstPkm.get(i).setTypeName1(objType1.getType());
+			if(lstPkm.get(i).getType2()!=null) {
+				PkmType objType2 = new PkmType();
+				objType2 = typeDao.layChiTiet(lstPkm.get(i).getType2());
+				lstPkm.get(i).setTypeName2(objType2.getType());
+			}
+		}
+		model.addAttribute("lstPkm", lstPkm);
+
+
+
+
+--------------------------------------------------
+<c:if test="${not empty lstPkm }">
+							<c:forEach var="pkm" items="${lstPkm }">
+                            <tr>
+                                <td class="cell-num cell-fixed" data-sort-value="1"><span
+                                        class="infocard-cell-img"><span class="img-fixed icon-pkmn"
+                                            data-src="http://localhost:8080/PokemonDatabase/images/icon/${pkm.icon }"
+                                            data-alt="${pkm.form } icon"></span></span><span
+                                        class="infocard-cell-data">00${pkm.pkmID }</span></td>
+                                <td class="cell-name"><a class="ent-name" href="/PokemonDatabase/pokedex/${pkm.pkmID }"
+                                        title="View Pokedex for #00${pkm.pkmID } ${pkm.form }">${pkm.form }</a></td>
+                                <td class="cell-icon"><a class="type-icon type-${pkm.typeName1 }" href="/type/${pkm.typeName1 }">${pkm.typeName1 }</a><br>
+                                <c:if test="${pkm.type2 > 0 }">
+                                    <a class="type-icon type-${pkm.typeName2 }" href="/type/${pkm.typeName2 }">${pkm.typeName2 }</a>
+                                </c:if>
+                                </td>
+                                <td class="cell-total">${pkm.hp+pkm.atk+pkm.def+pkm.spAtk+pkm.spDef+pkm.speed }</td>
+                                <td class="cell-num">${pkm.hp }</td>
+                                <td class="cell-num">${pkm.atk }</td>
+                                <td class="cell-num">${pkm.def }</td>
+                                <td class="cell-num">${pkm.spAtk }</td>
+                                <td class="cell-num">${pkm.spDef }</td>
+                                <td class="cell-num">${pkm.speed }</td>
+                            </tr>
+                            </c:forEach>
+                            </c:if>

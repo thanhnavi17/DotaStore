@@ -1,0 +1,5 @@
+*khi khách hàng mua thì lưu trạng thái của hoá đơn
+
+*quản trị viên sẽ check được hoá đơn
+
+*khi không có tài khoản thì lấy họ tên điện thoại email để hỗ trợ khách hàng
